@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import StudentDashboard from "./pages/Student/StudentDashboard";
 import SubmitComplaint from "./pages/Student/SubmitComplaint";
 import ComplaintTracking from "./pages/Student/ComplaintTracking";
+import StudentProfile from "./pages/Student/StudentProfile";
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
                 <Route path="/student/submit" element={<SubmitComplaint/>}/>
 
                 <Route path="/student/tracking" element={<ComplaintTracking/>}/>
+
+                <Route path="/student/profile" element={<StudentProfile/>}/>
 
             </Routes>
 

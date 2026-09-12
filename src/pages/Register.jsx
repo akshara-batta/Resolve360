@@ -8,6 +8,10 @@ function Register() {
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
         const [confirmPassword, setConfirmPassword] = useState("");
+        const [gender, setGender] = useState("");
+        const [fullName, setFullName] = useState("");
+        const [username, setUsername] = useState("");
+
         const navigate = useNavigate();
 
         function handleContinue() {
@@ -18,7 +22,11 @@ function Register() {
             }
         const user = {
         email: email,
-        password: password
+        password: password,
+        fullName : fullName,
+        gender: gender,
+        username: username
+
     };
 
     localStorage.setItem(
@@ -101,6 +109,8 @@ function Register() {
                 <input
                     type="text"
                     placeholder="Full Name"
+                    value={fullName}
+                    onChange={(e)=>setFullName(e.target.value)}
                 />
 
                 <input
@@ -113,6 +123,8 @@ function Register() {
                 <input
                     type="text"
                     placeholder="Username"
+                    value={username}
+                    onChange={(e)=> setUsername(e.target.value)}
                 />
 
                 <input
@@ -129,21 +141,22 @@ function Register() {
                     onChange={(e)=> setConfirmPassword(e.target.value)}
                 />
 
-                <select defaultValue="">
+                <select value={gender}
+                onChange={(e)=>setGender(e.target.value)}>
 
                     <option value="" disabled>
                         Select Gender
                     </option>
 
-                    <option value="male">
+                    <option value="Male">
                         Male
                     </option>
 
-                    <option value="female">
+                    <option value="Female">
                         Female
                     </option>
 
-                    <option value="other">
+                    <option value="Other">
                         Other
                     </option>
 

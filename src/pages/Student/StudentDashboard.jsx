@@ -87,7 +87,7 @@ return (
                     </p>
                 </div>
 
-                <div className="student-profile">
+                <Link to = "/student/profile" className="student-profile">
 
                     <div className="profile-circle">
                         A
@@ -103,7 +103,7 @@ return (
                         </p>
                     </div>
 
-                </div>
+                </Link>
 
             </header>
 
