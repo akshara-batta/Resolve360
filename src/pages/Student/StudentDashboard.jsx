@@ -1,10 +1,16 @@
 import{useEffect, useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/student-dashboard.css";
 
 function StudentDashboard() {
 
     const [complaints, setComplaints] = useState([]);
+    const navigate = useNavigate();
+
+    function handleLogout(){
+        localStorage.removeItem("isLoggedIn");
+        navigate("/login");
+    }
 
     useEffect(() => {
     const savedComplaints =
@@ -52,7 +58,7 @@ return (
 
             <div className="sidebar-bottom">
 
-                <button className="logout-btn">
+                <button className="logout-btn" onClick={handleLogout}>
                     Logout
                 </button>
 
