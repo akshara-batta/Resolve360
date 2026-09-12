@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import "../styles/register.css";
 import logo from "../assets/logo.png";
 import {useState} from "react";
@@ -7,8 +7,15 @@ function Register() {
 
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
+        const [confirmPassword, setConfirmPassword] = useState("");
+        const navigate = useNavigate();
 
         function handleContinue() {
+
+            if(email===""|| password===""){
+                alert("Please enter your email and password.");
+                return;
+            }
         const user = {
         email: email,
         password: password
@@ -18,6 +25,14 @@ function Register() {
         "registeredUser",
         JSON.stringify(user)
     );
+
+    if(password!=confirmPassword){
+        alert("Passwords do not match!");
+        return;
+    }
+
+    alert("Account created successfully! Please login.");
+    navigate("/login");
 }
     
 
@@ -110,6 +125,8 @@ function Register() {
                 <input
                     type="password"
                     placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={(e)=> setConfirmPassword(e.target.value)}
                 />
 
                 <select defaultValue="">
