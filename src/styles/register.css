@@ -1,0 +1,342 @@
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    background:#090714;
+
+    overflow:hidden;
+
+    overflow-y: auto;
+
+}
+
+/* MAIN PAGE */
+
+.register-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding: 40px 20px;
+
+    background:
+
+    radial-gradient(circle at top,#8b5cf655,transparent 40%),
+
+    linear-gradient(135deg,#090714,#1d1145);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+}
+
+/* LOGO */
+
+.register-logo{
+
+    width:85px;
+
+    margin-bottom:10px;
+
+    filter:
+    drop-shadow(0 0 25px #8b5cf6);
+
+}
+
+/* TITLE */
+
+.register-page h1{
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+/* ==========================
+   PROGRESS BAR
+========================== */
+
+.progress{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
+}
+
+.step{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    color:#777;
+
+}
+
+.circle{
+
+    width:32px;
+
+    height:32px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#2a233d;
+
+    color:white;
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+}
+
+.step p{
+
+    margin-top:7px;
+
+    font-size:13px;
+
+}
+
+.step.active .circle{
+
+    background:linear-gradient(
+    90deg,
+    #7c3aed,
+    #ec4899
+    );
+
+    box-shadow:
+
+    0 0 20px rgba(139,92,246,.8);
+
+}
+
+.step.active p{
+
+    color:#c084fc;
+
+}
+
+/* connecting lines */
+
+.line{
+
+    width:70px;
+
+    height:2px;
+
+    background:#3b3158;
+
+    margin:0 10px;
+
+}
+/* ==========================
+   REGISTER FORM BOX
+========================== */
+.register-box{
+
+    width:360px;
+
+    padding:25px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 0 30px rgba(0,0,0,.3);
+
+}
+.register-box input,
+.register-box select{
+
+    width:100%;
+
+    padding:12px 18px;
+
+    margin-bottom:12px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:14px;
+
+}
+
+.register-box input::placeholder{
+
+    color:#ddd;
+
+}
+
+.register-box select{
+
+    color:#ddd;
+
+}
+
+.register-box option{
+
+    color:black;
+
+}
+.register-box button{
+
+    width:100%;
+
+    padding:13px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    #7c3aed,
+    #ec4899
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.register-box button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow: 0 0 25px #8b5cf6;
+
+}
+.login-text{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#ddd;
+
+    font-size:14px;
+
+}
+
+.login-text span{
+
+
+    color:#c084fc;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+
+}
+@media(max-width:600px){
+
+    .register-box{
+
+        width:100%;
+
+        max-width:350px;
+
+        padding:25px;
+
+    }
+
+    .progress{
+
+        transform:scale(.9);
+    }
+
+    .register-page h1{
+
+        font-size:28px;
+
+    }
+}
+.login-text a{
+
+    color:#c084fc;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+.register-text a{
+
+    color:#c084fc;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.register-text a:hover{
+
+    color:white;
+
+    text-shadow:
+
+    0 0 10px #c084fc;
+
+}

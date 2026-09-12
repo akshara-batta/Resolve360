@@ -1,0 +1,458 @@
+/* ================================
+   COMPLAINT TRACKING PAGE
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+.student-dashboard {
+    min-height: 100vh;
+    display: flex;
+    background: #090714;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.student-sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: rgba(17, 14, 35, 0.95);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.student-brand {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.student-brand h2 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.student-brand h2 span {
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.student-brand p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #9994ad;
+}
+
+.student-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #aaa5bb;
+    padding: 13px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.nav-item:hover {
+    color: white;
+    background: rgba(124, 58, 237, 0.12);
+}
+
+.nav-item.active {
+    color: white;
+    background: linear-gradient(
+        90deg,
+        rgba(124, 58, 237, 0.35),
+        rgba(236, 72, 153, 0.15)
+    );
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: transparent;
+    color: #aaa5bb;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.student-main {
+    flex: 1;
+    padding: 40px 50px;
+    overflow-y: auto;
+}
+
+.student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.dashboard-label {
+    color: #9b7cff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.student-header h1 {
+    font-size: 32px;
+    margin: 0 0 8px;
+}
+
+.dashboard-subtitle {
+    color: #9a95aa;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* Profile */
+
+.student-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.profile-role {
+    margin: 3px 0 0;
+    font-size: 12px;
+    color: #9994ad;
+}
+
+
+/* ================================
+   TRACKING TOP
+================================ */
+
+.tracking-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.tracking-count h2 {
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.tracking-count p {
+    margin: 0;
+    color: #9994ad;
+    font-size: 13px;
+}
+
+.status-filter {
+    padding: 11px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    outline: none;
+    background: rgba(17, 14, 35, 0.9);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.status-filter option {
+    background: #171329;
+    color: white;
+}
+
+
+/* ================================
+   TRACKING CARDS
+================================ */
+
+.tracking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 1000px;
+}
+
+.tracking-card {
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    transition: 0.3s ease;
+}
+
+.tracking-card:hover {
+    border-color: rgba(124, 58, 237, 0.3);
+    transform: translateY(-2px);
+}
+
+
+/* Card top */
+
+.tracking-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.complaint-id {
+    color: #9b7cff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 6px;
+}
+
+.tracking-card h2 {
+    font-size: 17px;
+    margin: 0 0 5px;
+}
+
+.complaint-meta {
+    color: #8e899f;
+    font-size: 12px;
+    margin: 0;
+}
+
+
+/* Status */
+
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status.pending {
+    background: rgba(234, 179, 8, 0.12);
+    color: #facc15;
+}
+
+.status.progress {
+    background: rgba(59, 130, 246, 0.12);
+    color: #60a5fa;
+}
+
+.status.resolved {
+    background: rgba(34, 197, 94, 0.12);
+    color: #4ade80;
+}
+
+
+/* ================================
+   DETAILS
+================================ */
+
+.tracking-details {
+    display: flex;
+    gap: 70px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tracking-details span {
+    display: block;
+    color: #777286;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.tracking-details p {
+    margin: 0;
+    color: #d5d1df;
+    font-size: 12px;
+}
+
+
+/* ================================
+   PROGRESS BAR
+================================ */
+
+.progress-wrapper {
+    margin-top: 22px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    color: #8e899f;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.pending-fill {
+    width: 25%;
+    background: #facc15;
+}
+
+.progress-fill-active {
+    width: 65%;
+    background: #60a5fa;
+}
+
+.resolved-fill {
+    width: 100%;
+    background: #4ade80;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+    .student-sidebar {
+        width: 210px;
+    }
+
+    .student-main {
+        padding: 30px;
+    }
+
+    .student-header h1 {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .student-dashboard {
+        flex-direction: column;
+    }
+
+    .student-sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .student-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        font-size: 12px;
+    }
+
+    .student-main {
+        padding: 25px 20px;
+    }
+
+    .student-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .tracking-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .status-filter {
+        width: 100%;
+    }
+
+    .tracking-details {
+        gap: 35px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .student-main {
+        padding: 20px 15px;
+    }
+
+    .tracking-card {
+        padding: 20px;
+    }
+
+    .tracking-card-top {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .tracking-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+.status.closed {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.closed-fill {
+    width: 100%;
+}
