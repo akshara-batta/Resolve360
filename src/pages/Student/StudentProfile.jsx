@@ -6,6 +6,14 @@ function StudentProfile() {
         localStorage.getItem("registeredUser")
     )
 
+    if(!savedUser){
+        return (
+        <div className="student-profile-page">
+        <p>No user found.</p>
+            </div>
+        )
+    }
+
     return (
 
         <div className="student-profile-page">
