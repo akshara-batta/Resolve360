@@ -143,7 +143,7 @@ return (
                     </p>
 
                     <h2>
-                        {complaints.filter( (complaint) => complaint.status === "Progress" ).length}
+                        {complaints.filter( (complaint) => complaint.status === "In Progress" ).length}
                     </h2>
 
                 </div>
@@ -244,9 +244,7 @@ return (
                             No complaints submitted yet.
                         </p>
                     ) : (
-                complaints
-                .slice(-3)
-            .reverse()
+                complaints.slice(-3).reverse()
             .map((complaint) => (
             <div className="complaint-row" key={complaint.id}>
 

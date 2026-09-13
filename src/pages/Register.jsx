@@ -20,6 +20,13 @@ function Register() {
                 alert("Please enter your email and password.");
                 return;
             }
+
+
+            if(password!==confirmPassword){
+        alert("Passwords do not match!");
+        return;
+    }
+
         const user = {
         email: email,
         password: password,
@@ -34,10 +41,6 @@ function Register() {
         JSON.stringify(user)
     );
 
-    if(password!=confirmPassword){
-        alert("Passwords do not match!");
-        return;
-    }
 
     alert("Account created successfully! Please login.");
     navigate("/login");

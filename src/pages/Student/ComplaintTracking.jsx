@@ -150,7 +150,7 @@ function ComplaintTracking() {
                                             ? "pending" 
                                             : complaint.status === "In Progress" 
                                             ? "progress" 
-                                            : complaint.status === "resolved"
+                                            : complaint.status === "Resolved"
                                             ? "resolved"
                                             : "closed"}`}>
                     {complaint.status}
